@@ -15,14 +15,14 @@ const transporter = nodemailer.createTransport({
 }
 );
 
-router.get('/', (req, res) => {
+router.get('/sendemail', (req, res) => {
     res.json({
         status: 200,
         message: "Message Sent"
     });
 })
 
-router.post('/', (req, res) => {
+router.post('/sendemail', (req, res) => {
     const mailOptions = {
         from: 'aum.kulkarni@yahoo.com', // Replace with your email address
         to: req.body.email, // Replace with the recipient's email address
