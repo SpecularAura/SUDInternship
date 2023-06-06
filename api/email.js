@@ -48,3 +48,5 @@ app.post('/api/send-email', (req, res) => {
             }
         });
 });
+
+module.exports = app;
