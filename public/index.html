@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Send an Email</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Send an Email</h1>
+        <form id="form" action="" class="form">
+            <div class="input-container">
+                <label for="name-input">Name<span class="required">*</span>: </label><input id="name-input" type="text" class="form--input"
+                    name="name" required autofocus>
+            </div>
+            <div class="input-container">
+                <label for="email-input">Email<span class="required">*</span>: </label><input id="email-input" type="email" class="form--input"
+                    name="email" required>
+            </div>
+            <label for="message-input">Enter any additional message:</label>
+            <textarea name="message" id="message-input" class="form--textarea" placeholder="Enter an additional message" cols="30" rows="10"></textarea>
+            <div class="success">
+                <img id="toggle-img" src="tick.jpg" alt="checkmark">
+                <span id="toggle-msg"></span>
+            </div>
+            <button type="submit" id="form--submit" class="form--submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
