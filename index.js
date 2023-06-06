@@ -5,11 +5,11 @@ const routes = require('./api/send-email')
 
 const app = express();
 
-app.use(express.static('/public/'))
+app.use(express.static('/public'))
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile('index.html');
     console.log("Here");
 })
 app.use('/api/send-email')
