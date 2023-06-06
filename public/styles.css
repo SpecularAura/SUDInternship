@@ -9,6 +9,57 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+#snackbar {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    padding: 16px;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        top: -30px;
+        opacity: 0;
+    }
+
+    to {
+        top: 10px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        top: 10px;
+        opacity: 1;
+    }
+
+    to {
+        top: -30px;
+        opacity: 0;
+    }
+}
+
+.error {
+    color: red;
+}
+
+.successful {
+    color: rgb(23, 196, 23);
+}
+
+@media only screen and (max-width: 500px) {}
+
 .form-container {
     height: 100vh;
     padding: 20px;
@@ -18,7 +69,7 @@ body {
     align-items: center;
 }
 
-.form-container > h1 {
+.form-container>h1 {
     color: whitesmoke;
     font-family: 'Inter', sans-serif;
 }
@@ -30,11 +81,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 5px 5px 15px -1px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.75);
+}
+
+.form>label {
+    align-self: flex-start;
 }
 
 .input-container {
-    width: 100%;    
+    width: 100%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -60,8 +115,8 @@ body {
     border-radius: 5px;
     color: white;
     background-color: #639;
-    border: none;   
-    cursor: pointer; 
+    border: none;
+    cursor: pointer;
 }
 
 .form--textarea {
@@ -76,7 +131,7 @@ body {
     display: none;
 }
 
-.success{
+.success {
     display: none;
     justify-content: center;
     width: 100%;
@@ -89,6 +144,7 @@ body {
     align-items: center;
     vertical-align: baseline;
 }
-.success > img {
+
+.success>img {
     height: 100%;
 }
