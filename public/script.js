@@ -14,7 +14,7 @@ submitForm.addEventListener("submit", (e) => {
         'additionalMessage': message
     }
     // Some Changes
-    fetch('/api/send-email',
+    fetch('/api/sendemail',
         {
             method: 'POST',
             headers: {
