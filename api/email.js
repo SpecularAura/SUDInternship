@@ -20,6 +20,13 @@ app.get('/', (req, res) => {
     console.log("Here");
 })
 
+app.get('/api/send-email', (req, res) => {
+    res.json({
+        status: 200,
+        message: "Message Sent"
+    })
+})
+
 app.post('/api/send-email', (req, res) => {
     const mailOptions = {
         from: 'aum.kulkarni@yahoo.com', // Replace with your email address
