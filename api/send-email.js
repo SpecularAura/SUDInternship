@@ -1,4 +1,4 @@
-const app = require("../app");
+const router = require("express").Router();
 const nodemailer = require('nodemailer');
 
 const transporter = nodemailer.createTransport({
@@ -15,19 +15,14 @@ const transporter = nodemailer.createTransport({
 }
 );
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-    console.log("Here");
-})
-
-app.get('/api/send-email', (req, res) => {
+router.get('/', (req, res) => {
     res.json({
         status: 200,
         message: "Message Sent"
-    })
+    });
 })
 
-app.post('/api/send-email', (req, res) => {
+router.post('/', (req, res) => {
     const mailOptions = {
         from: 'aum.kulkarni@yahoo.com', // Replace with your email address
         to: req.body.email, // Replace with the recipient's email address
@@ -56,4 +51,4 @@ app.post('/api/send-email', (req, res) => {
         });
 });
 
-module.exports = app;
+module.exports = router;
