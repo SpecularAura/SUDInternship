@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
     console.log("Here");
 })
-app.use('/api')
-
-
-module.exports = app;
+app.use('/api/send-email')
+const PORT = process.env.PORT || 8080
+app.listen(PORT, () => {
+    console.log(`Server running on port 3000`);
+  });
