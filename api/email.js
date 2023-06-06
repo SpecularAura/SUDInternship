@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     console.log("Here");
 })
 
-app.post('/send-email', (req, res) => {
+app.post('/api/send-email', (req, res) => {
     const mailOptions = {
         from: 'aum.kulkarni@yahoo.com', // Replace with your email address
         to: req.body.email, // Replace with the recipient's email address
